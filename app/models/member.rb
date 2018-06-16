@@ -1,6 +1,4 @@
 class Member < ActiveRecord::Base
-    audited
-
     # Validations
     validates :name, presence: true
     validates :mobile, presence: true
