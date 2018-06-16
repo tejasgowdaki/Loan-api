@@ -3,4 +3,5 @@ class AccountMember < ActiveRecord::Base
     belongs_to :account
     belongs_to :member
     has_many :savings
+    has_many :finances
 end

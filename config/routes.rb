@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   post '/fetch_savings_by_account_member' => 'savings#fetch_savings_by_account_member'
   post '/savings' => 'savings#create'
   put '/savings/:id' => 'savings#update'
+
+  # Finances routes
+  post '/fetch_finances_by_account' => 'finances#fetch_finances_by_account'
+  post '/fetch_finances_by_member' => 'finances#fetch_finances_by_member'
+  post '/fetch_finances_by_account_member' => 'finances#fetch_finances_by_account_member'
+  post '/finances' => 'finances#create'
+  put '/finances/:id' => 'finances#update'
 end

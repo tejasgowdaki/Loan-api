@@ -20,7 +20,7 @@ class MembersController < ApplicationController
     end
 
     def update
-        member = Member.find_by_id(params[:id])
+        member = Member.find(params[:id])
         if member.update(member_params)
             render json: Response.new.success(member)
         else

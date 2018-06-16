@@ -31,7 +31,7 @@ class SavingsController < ApplicationController
     end
 
     def update
-        saving = Saving.find_by_id(params[:id])
+        saving = Saving.find(params[:id])
         if saving.update(saving_params)
             render json: Response.new.success(saving)
         else

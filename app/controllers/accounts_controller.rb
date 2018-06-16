@@ -20,7 +20,7 @@ class AccountsController < ApplicationController
     end
 
     def update
-        account = Account.find_by_id(params[:id])
+        account = Account.find(params[:id])
         if account.update(account_params)
             render json: Response.new.success(account)
         else
