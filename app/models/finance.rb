@@ -7,6 +7,7 @@ class Finance < ActiveRecord::Base
 
     # Associations
     belongs_to :account_member
+    has_many :instalments
 
     # Callbacks
     before_update :update_balance
@@ -15,5 +16,7 @@ class Finance < ActiveRecord::Base
 
     def update_balance
         self.balance = self.amount
+        paid_amount = self.instalments.sum(:amount)
+        self.balance = self.balance - paid_amount
     end
 end

@@ -24,4 +24,9 @@ Rails.application.routes.draw do
   post '/fetch_finances_by_account_member' => 'finances#fetch_finances_by_account_member'
   post '/finances' => 'finances#create'
   put '/finances/:id' => 'finances#update'
+
+  # Instalment routes
+  post '/fetch_instalments_by_finance' => 'instalments#fetch_instalments_by_finance'
+  post '/instalments' => 'instalments#create'
+  put '/instalments/:id' => 'instalments#update'
 end
