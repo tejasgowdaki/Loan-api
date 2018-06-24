@@ -18,5 +18,6 @@ class Finance < ActiveRecord::Base
         self.balance = self.amount
         paid_amount = self.instalments.sum(:amount)
         self.balance = self.balance - paid_amount
+        self.pending = self.balance == 0 ? false : true
     end
 end

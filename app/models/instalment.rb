@@ -17,9 +17,9 @@ class Instalment < ActiveRecord::Base
     def update_finance
         finance = self.finance
         instalments = finance.instalments
-        finance.balance = finance.amount - instalments.sum(:amount) if finance.amount >= instalments.sum(:amount)
-        finance.pending = false if finance.balance == 0
-        binding.pry
+        balance = finance.amount - instalments.sum(:amount) if finance.amount >= instalments.sum(:amount)
+        pending = balance == 0 ? false : true
+        finance.update_attributes(balance: balance, pending: pending )
         finance.save
     end
 end
